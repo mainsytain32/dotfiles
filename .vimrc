@@ -1,4 +1,4 @@
-"http://qiita.com/delphinus/items/00ff2c0ba972c6e41542
+"show:http://qiita.com/delphinus/items/00ff2c0ba972c6e41542
 
 " プラグインが実際にインストールされるディレクトリ
 let s:dein_dir = expand('~/.cache/dein')
@@ -37,6 +37,7 @@ if dein#check_install()
   call dein#install()
 endif
 " --------------- dein end ---------------
+filetype plugin indent on
 
 syntax enable
 set background=dark
@@ -69,8 +70,18 @@ set paste
 "インデント
 set tabstop=2 shiftwidth=2 expandtab
 
+" 改行時に前の行のインデントを継続する
+set showmatch
+
 "スワップファイルを作成しない
 set noswapfile
+
+" tagsジャンプの時に複数ある時は一覧表示
+nnoremap <C-]> g<C-]>
+
+"bufferを切り替える時に編集中ファイルを保存しなくても良くなる機能
+"show: http://qiita.com/qtamaki/items/4da4ead3f2f9a525591a
+set hidden
 
 "INSERTモードのときだけ横線解除
 augroup set_cursorline
@@ -81,10 +92,6 @@ augroup END
 "全角スペースを視覚化
 highlight ZenkakuSpace cterm=underline ctermfg=lightblue guibg=#666666
 au BufNewFile,BufRead * match ZenkakuSpace /　/
-
-"bufferを切り替える時に編集中ファイルを保存しなくても良くなる機能
-"show: http://qiita.com/qtamaki/items/4da4ead3f2f9a525591a
-set hidden
 
 " Strip trailing whitespace
 function! <SID>StripTrailingWhitespaces()
@@ -99,43 +106,3 @@ function! <SID>StripTrailingWhitespaces()
     call cursor(l, c)
 endfunction
 autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
-
-" neobundle deinに以降したから一旦コメントアウト
-"set nocompatible               " Be iMproved
-"filetype off                   " Required!
-"
-"if has('vim_starting')
-"  if &compatible
-"    set nocompatible               " Be iMproved
-"  endif
-"
-"  set runtimepath+=~/.vim/bundle/neobundle.vim/
-"endif
-"
-"call neobundle#begin(expand('~/dotfiles/.vim/bundle/'))
-"
-"NeoBundleFetch 'Shougo/neobundle.vim'
-"NeoBundle 'Shougo/unite.vim'
-"NeoBundle 'Shougo/vimproc'
-"NeoBundle 'vim-ruby/vim-ruby'
-"NeoBundle 'tpope/vim-rails'
-"NeoBundle 'slim-template/vim-slim'
-"NeoBundle 'kchmck/vim-coffee-script'
-"NeoBundle 'pangloss/vim-javascript'
-"NeoBundle 'mxw/vim-jsx'
-"NeoBundle 'JulesWang/css.vim'
-"NeoBundle 'cakebaker/scss-syntax.vim'
-"NeoBundle 'nathanaelkane/vim-indent-guides'
-"NeoBundle 'scrooloose/syntastic'
-"
-"call neobundle#end()
-"
-"filetype plugin indent on     " Required!
-"
-"" Installation check.
-"if neobundle#exists_not_installed_bundles()
-"  echomsg 'Not installed bundles : ' .
-"        \ string(neobundle#get_not_installed_bundle_names())
-"  echomsg 'Please execute ':NeoBundleInstall' command.'
-"  "finish
-"endif
