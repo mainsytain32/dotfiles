@@ -25,3 +25,8 @@ repo   = 'thinca/vim-fontzoom'
 on_cmd = ['Fontzoom']
 on_map = ['<Plug>(fontzoom-']
 gui    = 1
+
+# go
+[[plugins]]
+repo = 'fatih/vim-go'
+on_ft = ['go']
