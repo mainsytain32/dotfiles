@@ -9,7 +9,7 @@
 	trustExitCode = true
 [user]
 	name = mainsytain32
-	email = maiokimoto32@yahoo.co.jp
+	email = maiokimoto32@gmail.com
 [color]
 	ui = auto
 [filter "lfs"]
@@ -26,3 +26,5 @@
   pr = pull-request
 [push]
   default = current
+[ghq]
+	root = /Users/maimac/code/golang/src
