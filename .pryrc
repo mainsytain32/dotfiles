@@ -1,0 +1,13 @@
+require 'pry'
+Pry.config.editor = "vim"
+Pry.config.theme = "tomorrow-night"
+
+Pry.config.history.should_load = true
+Pry.config.history.should_save = true
+
+if defined?(PryByebug)
+ Pry.commands.alias_command 'c', 'continue'
+ Pry.commands.alias_command 's', 'step'
+ Pry.commands.alias_command 'n', 'next'
+ Pry.commands.alias_command 'f', 'finish'
+end
