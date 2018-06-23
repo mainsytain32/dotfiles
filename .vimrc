@@ -106,3 +106,22 @@ function! <SID>StripTrailingWhitespaces()
     call cursor(l, c)
 endfunction
 autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
+
+"ctrlpvim/ctrlp.vim key mapping
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+
+"othree/javascript-libraries-syntax.vim
+let g:used_javascript_libs = 'underscore,backbone'
+
+"syntasticの設定
+let g:syntastic_mode_map = {
+  \ 'passive_filetypes': ['html', 'scss']
+  \}
+let g:syntastic_auto_loc_list = 1
+
+"vue syntax
+autocmd FileType vue syntax sync fromstart
+
+" 列のライン
+set cursorcolumn
