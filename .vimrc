@@ -1,3 +1,4 @@
+" --------------- dein start ---------------
 "show:http://qiita.com/delphinus/items/00ff2c0ba972c6e41542
 
 " プラグインが実際にインストールされるディレクトリ
@@ -56,7 +57,7 @@ set hlsearch
 set cursorline
 
 " クリップボード
-set clipboard+=unnamed
+set clipboard+=unnamed,autoselect
 
 " backspace使用できるように
 set backspace=indent,eol,start
