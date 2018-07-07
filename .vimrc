@@ -38,6 +38,7 @@ if dein#check_install()
   call dein#install()
 endif
 " --------------- dein end ---------------
+
 filetype plugin indent on
 
 syntax enable
@@ -56,8 +57,11 @@ set hlsearch
 "横線を入れる
 set cursorline
 
+"列のラインを入れる
+set cursorcolumn
+
 " クリップボード
-set clipboard+=unnamed,autoselect
+set clipboard+=unnamed
 
 " backspace使用できるように
 set backspace=indent,eol,start
@@ -123,6 +127,3 @@ let g:syntastic_auto_loc_list = 1
 
 "vue syntax
 autocmd FileType vue syntax sync fromstart
-
-" 列のライン
-set cursorcolumn
