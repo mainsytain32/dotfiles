@@ -54,9 +54,6 @@ set number
 "検索結果をハイライト
 set hlsearch
 
-"横線を入れる
-set cursorline
-
 "列のラインを入れる
 set cursorcolumn
 
