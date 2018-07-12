@@ -1,21 +1,21 @@
 [core]
-	excludesfile = /Users/maimac/.gitignore_global
-	editor = vim
+  excludesfile = /Users/maimac/.gitignore_global
+  editor = vim
 [difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
+  cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+  path =
 [mergetool "sourcetree"]
-	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
+  cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+  trustExitCode = true
 [user]
-	name = mainsytain32
-	email = maiokimoto32@gmail.com
+  name = mainsytain32
+  email = maiokimoto32@gmail.com
 [color]
-	ui = auto
+  ui = auto
 [filter "lfs"]
-	required = true
-	clean = git-lfs clean %f
-	smudge = git-lfs smudge %f
+  required = true
+  clean = git-lfs clean %f
+  smudge = git-lfs smudge %f
 [alias]
   co = checkout
   st = status
@@ -27,4 +27,4 @@
 [push]
   default = current
 [ghq]
-	root = /Users/maimac/code/golang/src
+  root = /Users/maimac/code/golang/src
