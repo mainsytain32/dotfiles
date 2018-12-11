@@ -12,6 +12,6 @@ alias be='bundle exec'
 
 alias mv='mv -i'
 alias rm='rm -i'
-alias cp='mv -ip'
+alias cp='cp -ip'
 
 alias memo='cd ~/memo'

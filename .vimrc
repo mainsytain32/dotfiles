@@ -54,9 +54,6 @@ set number
 "検索結果をハイライト
 set hlsearch
 
-"列のラインを入れる
-set cursorcolumn
-
 " クリップボード
 set clipboard+=unnamed
 
