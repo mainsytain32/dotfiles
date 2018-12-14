@@ -24,7 +24,8 @@
   cmt = commit
   b = browse
   pr = pull-request
-  df    = diff --color-words --word-diff-regex='\\w+|[^[:space:]]'
+  df = diff --color-words --word-diff-regex='\\w+|[^[:space:]]'
+  lg = log --pretty=oneline
 [push]
   default = current
 [ghq]
