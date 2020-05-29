@@ -1,0 +1,5 @@
+#!/bin/sh
+
+PERCENT=$(ioreg -r -d1  -k BatteryPercent | grep -F '"BatteryPercent"' | awk -F'[=]' '{print $2}')
+PRODUCT_NAME=$(ioreg -r -d1  -k BatteryPercent | grep -F '"Product"' | awk -F'[=]' '{print $2}' | head -1 | sed 's/"//g')
+echo ${PRODUCT_NAME[0]}: $PERCENT%
