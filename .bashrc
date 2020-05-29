@@ -1,3 +1,5 @@
+export EDITOR='vim'
+
 # Git
 source ~/.git-prompt.sh
 source ~/.git-completion.bash
