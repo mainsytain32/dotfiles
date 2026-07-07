@@ -1,7 +1,7 @@
 [core]
   excludesfile = /Users/maimac/.gitignore_global
-  editor = vim
-  autocrlf = input
+	editor = /usr/bin/vim
+	autoCRLF = false
 [difftool "sourcetree"]
   cmd = opendiff \"$LOCAL\" \"$REMOTE\"
   path =
@@ -9,14 +9,15 @@
 	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
 [user]
-  name = mainsytain32
+	name = maiokimoto
   email = maiokimoto32@gmail.com
 [color]
   ui = auto
 [filter "lfs"]
   required = true
-  clean = git-lfs clean %f
-  smudge = git-lfs smudge %f
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
 [alias]
   co = checkout
   st = status
@@ -27,6 +28,7 @@
   pr = pull-request
   df = diff --color-words --word-diff-regex='\\w+|[^[:space:]]'
   lg = log --pretty=oneline
+  delete-merged-branch = "!f () { git branch --merged|egrep -v '\\*|develop|master|staging'|xargs git branch -d; };f"
 [push]
   default = current
 [ghq]
