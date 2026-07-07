@@ -109,13 +109,21 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-source /usr/local/git/contrib/completion/git-prompt.sh
-GIT_PS1_SHOWDIRTYSTATE=true
-GIT_PS1_SHOWUNTRACKEDFILES=true
-GIT_PS1_SHOWUPSTREAM=auto
-setopt PROMPT_SUBST
+autoload -Uz vcs_info
 
-PS1='%F{magenta}[%*]%f%F{white}%~%f:%F{green}%n@%m%f:%F{cyan}$(__git_ps1 "[%s]")%f\$ '
+precmd() {
+  vcs_info
+}
+
+zstyle ':vcs_info:*' enable git
+zstyle ':vcs_info:git:*' formats ' %F{yellow}(%b)%f'
+zstyle ':vcs_info:git:*' actionformats ' %F{yellow}(%b|%a)%f'
+
+autoload -U colors && colors
+setopt PROMPT_SUBST
+PROMPT='%F{magenta}[%*]%f%F{cyan}%~%f${vcs_info_msg_0_} %F{white}%n@%m%f %# '
+
+# PS1='%F{magenta}[%*]%f%F{white}%~%f:%F{green}%n@%m%f:%F{cyan}$(__git_ps1 "[%s]")%f\$ '
 # The following lines have been added by Docker Desktop to enable Docker CLI completions.
 fpath=(/Users/maimac/.docker/completions $fpath)
 autoload -Uz compinit
